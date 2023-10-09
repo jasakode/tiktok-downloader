@@ -1,0 +1,117 @@
+
+
+ /* Gaya dasar */
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Kotak dengan posisi sticky */
+.sticky-box {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Konten di dalam kotak */
+.content {
+    padding: 20px;
+}
+
+/* Isi contoh */
+.content p {
+    margin: 0;
+}
+
+.input-box {
+    width: 30%; /* Lebar default */
+}
+.form-box {
+    min-height: 100vh;
+}
+
+.box-video-form {
+    display: flex;
+}
+#video-box {
+    display: none;
+}
+
+.box-video-info {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    box-shadow: 0 0 5px 0 white;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+}
+.box-video-info-cbox {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-video-info-cbox-info {
+    width: 60%;
+}
+.box-video-info-cbox-info-nav {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box-video-info-cbox-info-nav  button {
+    width: 60%;
+}
+.form-input-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-input-info {
+    width: 60%;
+}
+.image-video-box {
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    min-height: 200px;
+    background-color: white;
+    box-shadow: 0 0 5px 0 white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.image-video-box  img {
+    width: 100%;
+}
+/* Media query untuk layar yang kurang dari 700px */
+@media screen and (max-width: 700px) {
+    .input-box {
+        width: 90%; /* Lebar saat lebar layar kurang dari 700px */
+    }
+}
+
+.loading-box {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: none;
+}
