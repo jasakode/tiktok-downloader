@@ -1,7 +1,7 @@
 function copyToClipboard() {
     var inputElement = document.getElementById('input-link');
     navigator.clipboard.readText().then(text => {
-        console.log(text);
+        // console.log(text);
         inputElement.value = text;
     }).catch(err => {
         console.error('Gagal membaca teks dari clipboard:', err);
@@ -48,17 +48,9 @@ const requestPost = (link, cb) => {
         },
         body: JSON.stringify({ url: link })
     }).then(res => res.json()).then(res => {
-        cb({
-            error: "",
-            message: res.message,
-            data: res.data,
-        });
+        cb(res);
     }).catch(err => {
-        cb({
-            error: err.toString(),
-            message: "",
-            data: {},
-        })
+        cb(res)
     });
 };
 
@@ -89,36 +81,41 @@ const renderCard = (data) => {
     const downloadServer2 = document.getElementById("downloadServer2");
     // data.dynamicCover
 
-    if(imgaeTag && data.dynamicCover && data.dynamicCover.length > 0) {
-        imgaeTag.src = data.dynamicCover[0]
-    } else if(imgaeTag && data.originCover && data.originCover.length > 0) {
-        imgaeTag.src = data.originCover[0]
-    } else if(imgaeTag && data.cover && data.cover.length > 0) {
+    console.log(data)
+
+    if(imgaeTag && data.cover && data.cover.length > 0) {
         imgaeTag.src = data.cover[0]
-    };
+    }
+    if (nameTag) {
+        nameTag.innerText = "null"
+    }
+  
     if(creatorTag && data.author.nickname) {
         creatorTag.innerText = data.author.nickname;
     } else if(creatorTag){
         creatorTag.innerText = data.author.username;
     }
-    if(durationTag && data.duration) {
-        durationTag.innerText = data.duration;
+
+    if(durationTag && data.info.duration) {
+        durationTag.innerText = data.info.duration;
     };
-    if(downloadHD && data.video && data.video.length > 0) {
+
+    if(downloadHD && data.download_link.server1) {
         try { downloadHD.removeEventListener("click") } catch(er) {};
         downloadHD.addEventListener("click", () => {
-            downloadVideoFromURL(data.video[0], `maingames-${Date.now()}.mp4`);
+            downloadVideoFromURL(data.download_link.server1, `maingames-${Date.now()}.mp4`);
         });
     };
-    if(downloadServer2 && data.video && data.video.length > 1 || data.video.length == 1) {
+    if(downloadServer2 && data.download_link.server2) {
         try { downloadServer2.removeEventListener("click") } catch(er) {};
         downloadServer2.addEventListener("click", () => {
-            downloadVideoFromURL(data.video[1], `maingames-${Date.now()}.mp4`);
+            downloadVideoFromURL(data.download_link.server2, `maingames-${Date.now()}.mp4`);
         });
     };
 };
 
 function processLink() {
+
     var inputElement = document.getElementById('input-link');
     const link = inputElement.value;
     if (link == "") {
@@ -142,7 +139,8 @@ function processLink() {
             if(videoBox) {
                 videoBox.style.display = "flex";
             }
-            renderCard(res.data);
+            renderCard(res);
         }
     });
+
 };

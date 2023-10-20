@@ -1,0 +1,213 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+      "version": "1.0.6",
+      "title": "Swagger Tiktok Downloader Documentations",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "email": "apiteam@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "petstore.swagger.io",
+    "basePath": "/v2",
+    "tags": [
+        {
+            "name": "Tiktok Api Scrap",
+            "description": "Tiktok Api Scrap"
+        }
+    ],
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": ["Tiktok Api Scrap"],
+                "summary": "uploads an image",
+                "description": "",
+                "operationId": "uploadFile"
+            },
+            "post": {
+                "tags": ["Tiktok Api Scrap"],
+                "summary": "Procces link Tiktok",
+                "description": "",
+                "operationId": "processLink",
+                "requestBody": {
+                    "description": "Update an existent user in the store",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProccessLinkBodyRequest"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProccessLinkBodyRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                      "description": "Successful operation",
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/proccessLinkBodyResponse"
+                          }
+                        },
+                        "application/xml": {
+                          "schema": {
+                            "$ref": "#/components/schemas/proccessLinkBodyResponse"
+                          }
+                        }
+                      }
+                    },
+                    "405": {
+                      "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                      "petstore_auth": [
+                        "write:pets",
+                        "read:pets"
+                      ]
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ProccessLinkBodyRequest": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "string",
+                    "example": "https://www.tiktok.com/@wm87.4/video/7290004130393902338?is_from_webapp=1&sender_device=pc"
+                  }
+                },
+                "xml": {
+                  "name": "proccessLinkBodyRequest"
+                }
+            },
+            "proccessLinkBodyResponse": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "photoUrls"
+                ],
+                "properties": {
+                    "error": {
+                        "type": "string",
+                        "format": "string",
+                        "example": ""
+                    },
+                    "message": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "Success Proccess url"
+                    },
+                    "response_id": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "abc"
+                    },
+                    "response_time": {
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": 1697822335723
+                        },
+                        "end": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": 1697822337787
+                        },
+                        "proccess": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": 2064
+                        }
+                      } 
+                    },
+                    "author": {},
+                    "info": {},
+                    "cover": {},
+                    "download_link": {
+                        "type": "object",
+                        "properties": {
+                            "server1": {
+                                "type": "integer",
+                                "format": "int64",
+                                "example": "https://d"
+                            },
+                            "server2": {
+                                "type": "string",
+                                "format": "string",
+                                "example": "https://d"
+                            },
+                            "server3": {
+                                "type": "string",
+                                "format": "string",
+                                "example": "https://d"
+                            }
+                        }
+                    }
+                },
+                "xml": {
+                  "name": "Pet"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      },
+      "petstore_auth": {
+        "type": "oauth2",
+        "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+        "flow": "implicit",
+        "scopes": {
+          "read:pets": "read your pets",
+          "write:pets": "modify pets in your account"
+        }
+      }
+    },
+    "definitions": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "Find out more about Swagger",
+      "url": "http://swagger.io"
+    }
+  
+}
