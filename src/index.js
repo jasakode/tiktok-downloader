@@ -25,6 +25,7 @@ async function main() {
     app.use(express.static('public/views'));
     
     const html = fs.readFileSync("./public/html/index.html", "utf-8");
+    const sitemaps = fs.readFileSync("./public/html/index.html", "utf-8");
 
     // app.use('/api-docs', swaggerUi.serve);
     // app.get('/api-docs', swaggerUi.setup(JSON.parse(swagDocs), {
@@ -101,6 +102,10 @@ async function main() {
         res.write(html);
         return res.end();
     });
+
+
+
+    
     app.get("/m", (req, res) => {
         const html = fs.readFileSync("./public/html/mobile.html", "utf-8");
         res.write(html);

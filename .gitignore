@@ -1,6 +1,5 @@
-node_modules/
-package-lock.json
-sitemap.xml
-sitemap.json
-logs/*
-public/pages template
+/node_modules/
+/package-lock.json
+/sitemap.json
+/logs/*
+/public/pages template
