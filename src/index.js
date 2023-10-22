@@ -110,7 +110,7 @@ async function main() {
     
 
 
-    app.get("/*", (req, res) => {
+    app.get("*", (req, res) => {
         res.redirect("/404/")
         return res.end();      
     });
