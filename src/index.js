@@ -1,42 +1,36 @@
 const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
 const config = require("./config/config");
 const bodyParser = require("body-parser");
 const swaggerUi = require('swagger-ui-express');
 const path = require("path");
 const uuid = require("uuid");
+const cookieParser = require("cookie-parser");
+const logWritter = require("./middleware/request-log");
+
 
 async function main() {
     console.clear();
     console.log("Starting Server ....");
-
     const swagDocs = fs.readFileSync(path.resolve(__dirname, "../src/docs/docs.json"), "utf-8");
-
     const app = express();
     var jsonParser = bodyParser.json();
-    // app.use(cors({ origin: "*" }));
+    app.use(cookieParser());
+
+    app.use(logWritter);
+
     app.use(express.static('public'))
-    // app.use()
+    app.use(express.static('public/html'))
+    app.use(express.static('public/views'));
+    
+    const html = fs.readFileSync("./public/html/index.html", "utf-8");
 
-    app.get("/", (req, res) => {
-        const html = fs.readFileSync("./public/html/index.html", "utf-8");
-        res.write(html);
-        return res.end();
-    });
-
-    app.get("/m", (req, res) => {
-        const html = fs.readFileSync("./public/html/mobile.html", "utf-8");
-        res.write(html);
-        return res.end();
-    });
-
-    app.get("/", (req, res) => {
-        const html = fs.readFileSync("./public/html/loading.html", "utf-8");
-        res.write(html);
-        return res.end();
-    });
+    // app.use('/api-docs', swaggerUi.serve);
+    // app.get('/api-docs', swaggerUi.setup(JSON.parse(swagDocs), {
+    //     customSiteTitle: "Tiktok Downloader Api",
+    //     customfavIcon: "/assets/icon/icons8-tiktok-50 (1).png"
+    // }));
     app.post("/", jsonParser, async (req, res) => {
         const startTime = Date.now();
         TiktokDL(req.body.url, {
@@ -98,14 +92,28 @@ async function main() {
             }).end();
         });
     });
+ 
+    app.get("/", (req, res) => {
+        res.write(html);
+        return res.end();
+    });
+    app.get("/index.html", (req, res) => {
+        res.write(html);
+        return res.end();
+    });
+    app.get("/m", (req, res) => {
+        const html = fs.readFileSync("./public/html/mobile.html", "utf-8");
+        res.write(html);
+        return res.end();
+    });
 
     
 
-    app.use('/api-docs', swaggerUi.serve);
-    app.get('/api-docs', swaggerUi.setup(JSON.parse(swagDocs), {
-        customSiteTitle: "Tiktok Downloader Api",
-        customfavIcon: "/assets/icon/icons8-tiktok-50 (1).png"
-    }));
+
+    app.get("/*", (req, res) => {
+        res.redirect("/404/")
+        return res.end();      
+    });
 
     app.listen(config.port, e => {
         if(e) {
@@ -117,3 +125,4 @@ async function main() {
     });
 };
 main();
+
