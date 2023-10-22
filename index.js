@@ -701,4 +701,6 @@ const fs = require("fs");
 
 
 
-
+// const site = fs.readFileSync("./public/html/sitemap.xml", "utf-8");
+// const siap = site.replace(/2023-9-22/g, "2023-09-22");
+// fs.writeFileSync("./public/html/sitemap.xml", siap)
