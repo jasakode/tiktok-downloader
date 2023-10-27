@@ -83,6 +83,11 @@ function renderCard(data) {
     const size = document.getElementById("video-size")
     const durasi = document.getElementById("video-durasi")
 
+    const imgaeTag = document.getElementById("image");
+    if(imgaeTag && data.cover && data.cover.length > 0) {
+        imgaeTag.src = data.cover[0]
+    }
+
     // if(data.author.nickname) {
     //     name.innerText = data.author.nickname;
     // } else {
