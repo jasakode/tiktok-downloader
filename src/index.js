@@ -105,12 +105,11 @@ async function main() {
     });
     
     app.get("/m", (req, res) => {
-        const html = fs.readFileSync("./public/html/mobile.html", "utf-8");
-        res.write(html);
-        return res.end();
+        const mobilePagePath = path.join(__dirname, "../public", "html", "mobile.html");
+        res.status(200).sendFile(mobilePagePath);
     });
 
-    app.get("*", (req, res) => {
+    app.get("/*", (req, res) => {
         res.redirect("/404/")
         return res.end();      
     });

@@ -1,13 +1,20 @@
 
 function LoadPage() {
-    if(window.innerWidth < 700 && window.location.pathname != "/m") {
-        window.location.replace("/m")
-        return
-    } else if (window.innerWidth > 700 && window.location.pathname != "/") {
-        window.location.replace("/")
-        return
+    if (window.innerWidth < 700 && window.location.pathname !== "/m") {
+        window.location.replace("/m");
+        return;
+    }
+    if (window.innerWidth >= 700 && window.location.pathname !== "/") {
+        window.location.replace("/");
+        return;
     }
 }
 
-window.addEventListener("resize", LoadPage);
-LoadPage();
+function HandleResize() {
+    if ((window.innerWidth < 700 && window.location.pathname !== "/m") || (window.innerWidth >= 700 && window.location.pathname !== "/")) {
+        LoadPage(); // Lakukan pengalihan hanya jika perlu
+    }
+}
+
+window.addEventListener("resize", HandleResize);
+LoadPage(); ;

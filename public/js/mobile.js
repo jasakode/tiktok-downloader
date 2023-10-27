@@ -1,13 +1,4 @@
 
-function LoadPage() {
-    if (window.innerWidth > 700 && window.location.pathname != "/") {
-        window.location.replace("/")
-        return
-    }
-}
-
-window.addEventListener("resize", LoadPage);
-LoadPage();
 
 
 const accordionButtons = document.querySelectorAll('.border button');
