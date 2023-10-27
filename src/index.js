@@ -12,13 +12,14 @@ const logWritter = require("./middleware/request-log");
 
 async function main() {
     console.clear();
+
     console.log("Starting Server ....");
     const swagDocs = fs.readFileSync(path.resolve(__dirname, "../src/docs/docs.json"), "utf-8");
     const app = express();
     var jsonParser = bodyParser.json();
     app.use(cookieParser());
 
-    app.use(logWritter);
+    // app.use(logWritter);
 
     app.use(express.static('public'))
     app.use(express.static('public/html'))
@@ -102,18 +103,12 @@ async function main() {
         res.write(html);
         return res.end();
     });
-
-
-
     
     app.get("/m", (req, res) => {
         const html = fs.readFileSync("./public/html/mobile.html", "utf-8");
         res.write(html);
         return res.end();
     });
-
-    
-
 
     app.get("*", (req, res) => {
         res.redirect("/404/")
@@ -128,6 +123,8 @@ async function main() {
             console.log("Read Docs In : ", `${config.host.includes("https") ? config.host : `http://${config.host}:${config.port}`}/api-docs`)
         }
     });
+
+
 };
 main();
 

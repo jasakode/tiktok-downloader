@@ -2,20 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
+    <title>Tiktok Video Downloader | Maingames</title> 
+    <meta name=”keywords” content="Tiktok Video Downloader"/>
+    <meta name="description" content="Tiktok Video Downloader, download video atau audio titok cepat,praktis,gratis,tanpa tanda air, terbaik indonesia."/>
+    <link rel="canonical" href="https://www.maingames.tech/tiktok-video-downlader/"/>
+    
 
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tiktok Video Downloader | Maingames"/>
+    <meta property="og:keywords" content="Tiktok Video Downloader"/>
+    <meta property="og:description" content="Tiktok Video Downloader, download video atau audio titok cepat,praktis,gratis,tanpa tanda air, terbaik indonesia."/>
+    <meta property="og:url" content="https://www.maingames.tech/tiktok-video-downlader/"/>
+    <meta property="og:site_name" content="Maingames"/>
+    <meta property="article:modified_time" content="2023-09-27T10:47:26+00:00"/>
+    <meta property="og:image" content="https://www.maingames.tech/assets/icon/logo.png"/>
 
-    <meta name="maingames" content="Tiktok video Downloader">
-    <meta name="description" content="TikTok Video Downloader - Download TikTok Videos">
-    <meta name="keywords" content="TikTok, Video Downloader, Download TikTok Videos">
+    <meta property="og:image:width" content="50"/>
+    <meta property="og:image:height" content="50"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:label1" content="Est. reading time"/>
+    <meta name="twitter:data1" content="10 minutes"/>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- <link type="text/css" rel="stylesheet" href="/css/output.css"> -->
-    <link rel="stylesheet" href="/css/mobile.css">
-    <title>Maingames</title>
+ 
+
+    <link rel='dns-prefetch' href='//secure.gravatar.com' />
+    <link rel='dns-prefetch' href='//stats.wp.com' />
+    <link rel='dns-prefetch' href='//v0.wordpress.com' />
 
 </head>
 <body class="bg-blue-500">
+
+    <div class="m-loading-box" id="mloadingBox">
+        <lottie-player src="/assets/json/animation_lnj453ut.json" background="transparent"  speed="1"  style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+    </div>
+
+
     <header class="sticky-box bg-blue-600 p-4 shadow">
         <div class="container mx-auto flex justify-between items-center">
             <a href="/" class="text-white text-xl font-semibold" id="logo">Main Games</a>
@@ -36,7 +62,7 @@
     </div>
 
     <div class="space-y-10">
-        <div class="flex justify-center items-center flex-col w-full space-y-3 mt-8">
+        <div class="flex justify-center items-center flex-col w-full space-y-3 mt-8" id="input-box">
             <div class="relative w-10/12 overflow-hidden rounded-lg ">
                 <input type="text" id="input-link" class=" text-sx w-full h-12 px-2 focus:outline-none focus:border-blue-500" placeholder="Tempel tautan di sini ...">
                 <button type="button" class="absolute h-8 top-2 right-2 flex items-center justify-center px-2 py-2 rounded-lg text-white bg-blue-500 hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="copyToClipboard(this)">
@@ -51,6 +77,44 @@
                 <span class="text-xl">Download</span>
             </button>
         </div>
+
+        <div class="m-video-info my-8" id="video-box">
+            <div class="m-video-info-content">
+    
+                <div class="m-video-info-tem-box">
+                    <div class="m-video-info-img-box">
+                        <img src="./assets/image/10_seleb_cantik_korea_young_and_rich-20190716-005-non_fotografer_kly 1.png" alt="">
+                    </div>
+                </div>
+    
+                <div class="m-video-info-tem-box">
+                    <div class="m-video-info-header ">
+                        <div class="m-video-info-name">Name : <span id="video-name"></span> </div>
+                        <div class="m-video-info-name">creator : <span id="video-creator"></span> </div>
+                        <div class="m-video-info-name">size <span id="video-size"></span> </div>
+                        <div class="m-video-info-name">durasi <span id="video-durasi"></span> </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="m-video-info-content space-y-2 my-4 flex-col items-center">
+                <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-green-600 font-bold" id="download1">
+                    <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
+                    <span class="text-xl">Download</span>
+                </button>
+                <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-green-600 font-bold" id="download2">
+                    <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
+                    <span class="text-xl">Download Server 2</span>
+                </button>
+                <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 font-bold" id="downloadLainnya">
+                    <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
+                    <span class="text-xl">Download Video lainnya</span>
+                </button>
+            </div>
+        </div>
+
+
+
         
         <div class="w-full flex-col justify-center items-center space-y-4" >
             <h3 class="w-10/12 mx-auto text-center text-2xl font-bold">Download video TikTok (Musically) Tanpa Watermark GRATIS</h3>
@@ -106,6 +170,130 @@
 
                 </div>
             </div>
+
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Cara mendapat tiktok video download tautan ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Buka situs web atau aplikasi TikTok Anda
+                    Pilih video TikTok yang ingin Anda unduh
+                    Temukan tombol Bagikan, Klik. Di sana temukan tombol Salin tautan dan Pilih salin tautan
+                    URL video unduhan Anda sudah siap di papan klip.
+                    Misalnya, tautan akan memiliki formulir berikut
+                    https://v.douyin.com/UFLNjnh/
+                    atau
+                    https://www.tiktok.com/@philandmore/video/6805867805452324102
+                    atau
+                    https://m.tiktok.com/v/6805867805452324102.html
+                    dan banyak lagi...
+                </div>
+            </div>
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Dimanakah Tiktok Videos saved setelah di unduh ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Saat Anda mengunduh file, mereka biasanya disimpan ke folder apa pun yang telah Anda tetapkan sebagai default. Browser Anda biasanya mengatur folder ini untuk Anda. Dalam pengaturan browser, Anda dapat mengubah dan memilih secara manual folder tujuan untuk Download TikTok videos anda.
+                </div>
+            </div>
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Apakah maingames.tech Menyimpan Video yang telah di unduh atau menyimpan salinan video ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Oh tidak, maingames.tech tidak menyimpan video, kami juga tidak menyimpan salinan video yang diunduh. Semua video di-host di server TikTok. Selain itu, kami tidak melacak riwayat unduhan pengguna kami, sehingga penggunaan maingames.tech benar-benar anonim.
+                </div>
+            </div>
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Apakah Saya perlu mengistal intruksi atau ekstensi ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Tidak. Kami mencoba untuk menjaga hal-hal semudah mungkin bagi pengguna kami. Yang Anda butuhkan hanyalah tautan unduhan TikTok Anda. dan itu masuk ke situs web kami.
+                </div>
+            </div>
+
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Apakah Saya Harus Membayar ke tiktok downloader ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Tidak, Anda tidak perlu membayar apa pun karena perangkat lunak kami selalu gratis. Anda dapat mendukung kami dengan menonaktifkan Ad Blocks di browser Anda. Ini mendukung pengembangan lebih lanjut kami.
+                </div>
+            </div>
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Apakah ada batasan untuk unduh video tiktok di maingames.tech ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Tidak, Anda dapat mengunduh banyak video TikTok favorit Anda di maingames tanpa batas unduhan.
+                </div>
+            </div>
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Bisakah saya unduh video bersuli tinggi di maingames.tech ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Ya, maingames adalah Download video TikTok yang menyediakan resolusi tertinggi untuk Anda. Jika kami menemukan video Tiktok beresolusi Full HD atau lebih tinggi, kami akan segera menampilkan tautan Unduh berkualitas tinggi dan Anda dapat mengunduhnya.
+                </div>
+            </div>
+
+
+            <div class="w-10/12 mx-auto border border-gray-300 rounded bg-blue-600  text-white py-1 mt-20 mb-4">
+                <button class="w-full px-4 py-2 flex items-center justify-between focus:outline-none">
+                  <span class="font-semibold">Apakah saya dapat hanya menggunduh suara atau mp3 dari video ?</span>
+                  <svg class="w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 14a.75.75 0 01-.53-1.28l4.24-4.24a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-.53.22z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 6a.75.75 0 01.53 1.28l-4.24 4.24a.75.75 0 01-1.06-1.06l5-5a.75.75 0 01.53-.22z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="pl-6 hidden p-4">
+                    Ya, kamu dapat hanya mengunduh audio tanpa mengunduh video di maingames.tech
+                </div>
+            </div>
+
+            <div class="text-white-tstst">
+                <b>Catatan: </b> Maingames bukan alat Tiktok, kami tidak memiliki hubungan dengan Tiktok atau ByteDance Ltd. Kami hanya mendukung pengguna Tiktok untuk mengunduh video kami di Tiktok tanpa logo tanpa masalah. Jika Anda memiliki masalah dengan situs seperti Tikmate atau SSStiktok, coba Maingames, kami terus memperbarui untuk memudahkan pengguna download video tiktok. Terima kasih!
+            </div>
+
+
+
             <div class="mb-10"></div>
         </div>
         
@@ -113,40 +301,7 @@
 
 
 
-    <!-- <div class="m-video-info my-8" id="">
-        <div class="m-video-info-content">
-
-            <div class="m-video-info-tem-box">
-                <div class="m-video-info-img-box">
-                    <img src="./assets/image/10_seleb_cantik_korea_young_and_rich-20190716-005-non_fotografer_kly 1.png" alt="">
-                </div>
-            </div>
-
-            <div class="m-video-info-tem-box">
-                <div class="m-video-info-header ">
-                    <div class="m-video-info-name">Name</div>
-                    <div class="m-video-info-name">Name</div>
-                    <div class="m-video-info-name">Name</div>
-                    <div class="m-video-info-name">Name</div>
-                </div>
-            </div>
-
-        </div>
-        <div class="m-video-info-content space-y-2 my-4 flex-col items-center">
-            <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-green-600 font-bold" onclick="processLink()">
-                <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
-                <span class="text-xl">Download</span>
-            </button>
-            <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-green-600 font-bold" onclick="processLink()">
-                <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
-                <span class="text-xl">Download Server 2</span>
-            </button>
-            <button type="submit" class="w-10/12 flex-row justify-between items-center h-12 text-white rounded-lg hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 font-bold" onclick="processLink()">
-                <img src="./assets/icon/download (1).png" width="25px" alt="" class="inline-flex">
-                <span class="text-xl">Download Video lainnya</span>
-            </button>
-        </div>
-    </div> -->
+    
 
     
 
@@ -187,7 +342,8 @@
  
     <script src="/js/loading.js"></script>
     <script src="/js/mobile.js"></script>
-
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type='text/javascript' src='//pl21030652.highcpmrevenuegate.com/eb/ec/43/ebec43d14b6b6c5d307d2317db271c30.js'></script>
 </body>
 </html>

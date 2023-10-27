@@ -1167,3 +1167,27 @@ video {
     -webkit-backdrop-filter: blur(2px);
     display: none;
 }
+
+.text-white-tstst {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+}
+#videoBox {
+  display: none;
+}
+.m-loading-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(71, 71, 71, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+#mloadingBox {
+  display: none;
+}
