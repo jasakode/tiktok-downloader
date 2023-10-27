@@ -84,9 +84,8 @@ function renderCard(data) {
     const durasi = document.getElementById("video-durasi")
 
     const imgaeTag = document.getElementById("image");
-    if(imgaeTag && data.cover && data.cover.length > 0) {
-        imgaeTag.src = data.cover[0]
-    }
+
+    
 
     // if(data.author.nickname) {
     //     name.innerText = data.author.nickname;
@@ -102,6 +101,10 @@ function renderCard(data) {
 
     if(data.duration) {
         durasi.innerText = data.duration;
+    }
+
+    if(data.cover && data.cover.length > 0) {
+        imgaeTag.src = data.cover[0]
     }
 
     
